@@ -1,12 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1peqmvdsf8ee"]
+[gd_scene load_steps=7 format=3 uid="uid://b1peqmvdsf8ee"]
 
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_2w4r1"]
 [ext_resource type="Texture2D" uid="uid://bvpih2wuyv5ns" path="res://rsc/pelota_ejemplo.png" id="1_fax7v"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ljtu1"]
+radius = 45.6508
+
+[sub_resource type="Animation" id="Animation_r3vfr"]
+resource_name = "jump"
+
+[sub_resource type="Animation" id="Animation_s15lw"]
+resource_name = "death"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ggu0"]
+_data = {
+"death": SubResource("Animation_s15lw"),
+"jump": SubResource("Animation_r3vfr")
+}
+
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_2w4r1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2.00003, -3.99998)
+position = Vector2(-1, -2.38419e-07)
 scale = Vector2(0.31, 0.31)
 texture = ExtResource("1_fax7v")
 
 [node name="CharacterBody2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ljtu1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0ggu0")
+}

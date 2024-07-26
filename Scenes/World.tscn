@@ -1,7 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://nr0dv728734n"]
+[gd_scene load_steps=4 format=3 uid="uid://nr0dv728734n"]
 
 [ext_resource type="PackedScene" uid="uid://b1peqmvdsf8ee" path="res://Scenes/Player.tscn" id="1_vnt3u"]
+[ext_resource type="PackedScene" uid="uid://bi43slgwbixcc" path="res://Scenes/Spikes.tscn" id="2_6dajf"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a1xib"]
 
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_vnt3u")]
+
+[node name="Testing_platform" type="StaticBody2D" parent="."]
+position = Vector2(132, 191)
+scale = Vector2(2.57, 2.57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Testing_platform"]
+shape = SubResource("WorldBoundaryShape2D_a1xib")
+
+[node name="Spikes" parent="." instance=ExtResource("2_6dajf")]
+position = Vector2(234, 170)

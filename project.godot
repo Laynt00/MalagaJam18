@@ -11,13 +11,9 @@ config_version=5
 [application]
 
 config/name="DeMalEnPeor"
+run/main_scene="res://Scenes/World.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
-
-[display]
-
-window/size/viewport_width=384
-window/size/viewport_height=224
 
 [input]
 
