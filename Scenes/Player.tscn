@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1peqmvdsf8ee"]
+
+[ext_resource type="Texture2D" uid="uid://bvpih2wuyv5ns" path="res://rsc/pelota_ejemplo.png" id="1_fax7v"]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.00003, -3.99998)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("1_fax7v")
+
+[node name="CharacterBody2D" type="CollisionShape2D" parent="."]
