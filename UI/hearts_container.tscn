@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://crameonhcq5dm"]
+
+[ext_resource type="PackedScene" uid="uid://kwih2saf6n1g" path="res://UI/heart.tscn" id="1_253ve"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+offset_right = 907.0
+offset_bottom = 907.0
+
+[node name="Panel" parent="." instance=ExtResource("1_253ve")]
+layout_mode = 2
