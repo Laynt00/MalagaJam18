@@ -25,9 +25,9 @@ func _physics_process(delta):
 		velocity.y = jump_velocity
 		
 	if is_reversed:
-		direction = Input.get_axis("left", "right")
-	else:
 		direction = Input.get_axis("right", "left")
+	else:
+		direction = Input.get_axis("left", "right")
 		
 	if direction:
 		velocity.x = direction * SPEED

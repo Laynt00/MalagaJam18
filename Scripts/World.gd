@@ -41,10 +41,6 @@ func _ready():
 func new_game():
 	score = 0
 	game_running = false
-	# Reset a los nodos
-	player.velocity = Vector2i(0,0)
-	camera_2d.position = CAMERA_START_POS
-	ground.position = GROUND_POS
 
  	# Reset al HUD
 	$HUD.get_node("Start").show()
@@ -55,8 +51,8 @@ func _process(delta):
 		
 		generate_obs()
 		
-		player.position.x += speed
-		camera_2d.position.x += speed
+		#player.position.x += speed
+		#camera_2d.position.x += speed
 		
 		# Actualizar Score
 		score += speed
