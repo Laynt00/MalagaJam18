@@ -1,19 +1,14 @@
 extends Node2D
 
 @onready var player = $"../Player"
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+@onready var hud = $HUD
+@onready var hearts_container = $HeartsContainer
 
 
 func _on_area_2d_body_entered(body):
 		player.currentHealth -= 1
+		var panel_to_remove = hearts_container.get_child(player.currentHealth)
+
 
 	#if player.currentHealth < 0:
 		#llamar a la animación de muerte

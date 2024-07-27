@@ -32,7 +32,6 @@ var game_running : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	hud.setMaxHearts(1)
 	screen_size = get_window().size
 	ground_height = ground.get_node("Sprite2D").texture.get_height()
 	new_game()

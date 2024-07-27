@@ -7,7 +7,7 @@ const SPEED = 300.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@export var maxHealth = 3
+@export var maxHealth = 7
 @onready var currentHealth: int = maxHealth
 
 var is_reversed = false
