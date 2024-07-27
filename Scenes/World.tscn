@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://nr0dv728734n"]
+[gd_scene load_steps=16 format=3 uid="uid://nr0dv728734n"]
 
 [ext_resource type="Script" path="res://Scenes/World.gd" id="1_d0edc"]
 [ext_resource type="PackedScene" uid="uid://np7f288s4pdy" path="res://Scenes/Player.tscn" id="1_vnt3u"]
@@ -6,6 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://dc3n1e8fuhnkv" path="res://UI/Paralax.tscn" id="3_qx8j1"]
 [ext_resource type="PackedScene" uid="uid://dyykk06sfykf" path="res://UI/hud.tscn" id="5_6jvrk"]
 [ext_resource type="PackedScene" uid="uid://c2f4k8jwqmrx0" path="res://chunk_spawner.tscn" id="6_gl01n"]
+[ext_resource type="PackedScene" uid="uid://dvugj455mieug" path="res://chunk_test.tscn" id="7_63sms"]
+[ext_resource type="PackedScene" uid="uid://bxrjypnh88ehm" path="res://pranks_manager.tscn" id="8_wualt"]
+[ext_resource type="PackedScene" uid="uid://di6n32relq1ka" path="res://Pranks/control_change.tscn" id="9_o3xji"]
+[ext_resource type="PackedScene" uid="uid://cye6o3ll4gi5v" path="res://Pranks/faster.tscn" id="10_tdnid"]
+[ext_resource type="PackedScene" uid="uid://bdjgajffbv0ow" path="res://Pranks/field_of_view.tscn" id="11_gn3yd"]
+[ext_resource type="PackedScene" uid="uid://uaodqthdgfwp" path="res://Pranks/reversed_screem.tscn" id="12_gvbyw"]
+[ext_resource type="PackedScene" uid="uid://dr4c26uhm2nr" path="res://Pranks/scroll_faster.tscn" id="13_85ut7"]
+[ext_resource type="PackedScene" uid="uid://dcy0fbisutd4h" path="res://Pranks/zoom_in.tscn" id="14_g3lal"]
+[ext_resource type="PackedScene" uid="uid://d13aa6negpbx" path="res://Pranks/blur.tscn" id="15_r1kgp"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_d0edc")
@@ -16,16 +25,42 @@ script = ExtResource("1_d0edc")
 position = Vector2(288, 269)
 
 [node name="Player" parent="." instance=ExtResource("1_vnt3u")]
-position = Vector2(32, 236)
+position = Vector2(32, 176)
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
 position = Vector2(192, 112)
 
 [node name="HUD" parent="." instance=ExtResource("5_6jvrk")]
 
-[node name="ChunkSpawner" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("6_gl01n")]
-spawn_place = NodePath("../Spanw_Position")
-
 [node name="Spanw_Position" type="Marker2D" parent="."]
 position = Vector2(384, 0)
 gizmo_extents = 123.4
+
+[node name="ChunkSpawner" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("6_gl01n")]
+speed = 50
+spawn_place = NodePath("../Spanw_Position")
+chunks = Array[PackedScene]([ExtResource("7_63sms"), ExtResource("7_63sms"), ExtResource("7_63sms")])
+
+[node name="PranksManager" parent="." node_paths=PackedStringArray("pranks") instance=ExtResource("8_wualt")]
+pranks = [NodePath("ScrollFaster"), NodePath("ControlChange"), NodePath("Faster"), NodePath("FieldOfView"), NodePath("ReversedScreen"), NodePath("ZoomIn"), NodePath("Blur")]
+
+[node name="ScrollFaster" parent="PranksManager" instance=ExtResource("13_85ut7")]
+visible = false
+
+[node name="ControlChange" parent="PranksManager" instance=ExtResource("9_o3xji")]
+visible = false
+
+[node name="Faster" parent="PranksManager" instance=ExtResource("10_tdnid")]
+visible = false
+
+[node name="FieldOfView" parent="PranksManager" instance=ExtResource("11_gn3yd")]
+visible = false
+
+[node name="ReversedScreen" parent="PranksManager" instance=ExtResource("12_gvbyw")]
+visible = false
+
+[node name="ZoomIn" parent="PranksManager" instance=ExtResource("14_g3lal")]
+visible = false
+
+[node name="Blur" parent="PranksManager" instance=ExtResource("15_r1kgp")]
+visible = false
