@@ -13,9 +13,8 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	if body.name == "Player":
 		player.currentHealth -= 1
-		print(player.currentHealth)
+
 	#if player.currentHealth < 0:
 		#llamar a la animación de muerte
 		
