@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://8c80ccoefpk1"]
+
+[ext_resource type="PackedScene" uid="uid://xc4snxivhoc0" path="res://Chunks/chunk_base.tscn" id="1_2bjcf"]
+
+[node name="Chunk" instance=ExtResource("1_2bjcf")]
+layer_0/tile_data = PackedInt32Array(851968, 1, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851972, 1, 0, 851973, 1, 0, 851974, 1, 0, 851975, 1, 0, 851976, 1, 0, 851977, 1, 0, 851978, 1, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 720902, 2, 65536, 786438, 1, 0, 786439, 2, 65536, 786440, 2, 65536, 720901, 2, 65536, 786437, 1, 0, 786447, 2, 65536, 786448, 2, 65536, 720913, 2, 65536, 786449, 1, 0, 720914, 2, 65536, 786450, 1, 0, 786432, 2, 65536, 786455, 2, 65536)
+
+[connection signal="body_entered" from="@Area2D@354439" to="@Area2D@354439" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@354440" to="@Area2D@354440" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@354441" to="@Area2D@354441" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@354442" to="@Area2D@354442" method="_on_body_entered"]
+[connection signal="body_entered" from="Spike" to="Spike" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@354443" to="@Area2D@354443" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@354444" to="@Area2D@354444" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@354445" to="@Area2D@354445" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@354446" to="@Area2D@354446" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@354447" to="@Area2D@354447" method="_on_body_entered"]

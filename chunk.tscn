@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://xc4snxivhoc0"]
-
-[ext_resource type="Script" path="res://Chunk.gd" id="1_pm4pr"]
-
-[node name="Chunk" type="TileMap"]
-format = 2
-script = ExtResource("1_pm4pr")

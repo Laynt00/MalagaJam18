@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://xc4snxivhoc0"]
+
+[ext_resource type="Script" path="res://Chunk.gd" id="1_pm4pr"]
+[ext_resource type="Texture2D" uid="uid://bevbg1pgrmdae" path="res://tiles_placeholder.png" id="1_pvmnt"]
+[ext_resource type="PackedScene" uid="uid://bv762dw8o722f" path="res://Scenes/Spike.tscn" id="2_2ox8o"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p28oo"]
+texture = ExtResource("1_pvmnt")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2, -8, -2)
+1:0/0/physics_layer_0/polygon_0/one_way = true
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_utgt6"]
+scenes/1/scene = ExtResource("2_2ox8o")
+
+[sub_resource type="TileSet" id="TileSet_d1ilj"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_p28oo")
+sources/2 = SubResource("TileSetScenesCollectionSource_utgt6")
+
+[node name="Chunk" type="TileMap"]
+tile_set = SubResource("TileSet_d1ilj")
+format = 2
+script = ExtResource("1_pm4pr")

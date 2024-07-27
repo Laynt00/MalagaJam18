@@ -1,14 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://nr0dv728734n"]
+[gd_scene load_steps=21 format=3 uid="uid://nr0dv728734n"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_d0edc"]
 [ext_resource type="PackedScene" uid="uid://b1peqmvdsf8ee" path="res://Scenes/Player.tscn" id="1_vnt3u"]
-[ext_resource type="PackedScene" uid="uid://dhd3231hb43al" path="res://Scenes/Ground.tscn" id="2_13bmt"]
+[ext_resource type="PackedScene" path="res://Scenes/Ground.tscn" id="2_13bmt"]
 [ext_resource type="PackedScene" uid="uid://dc3n1e8fuhnkv" path="res://UI/Paralax.tscn" id="3_qx8j1"]
 [ext_resource type="PackedScene" uid="uid://dyykk06sfykf" path="res://UI/hud.tscn" id="5_6jvrk"]
-[ext_resource type="PackedScene" uid="uid://d0yipfx23n7jy" path="res://Scenes/Spike.tscn" id="6_7gvsh"]
-[ext_resource type="PackedScene" path="res://chunk_spawner.tscn" id="6_gl01n"]
-[ext_resource type="PackedScene" path="res://chunk_test.tscn" id="7_63sms"]
-[ext_resource type="PackedScene" uid="uid://bdxoxggd8yll8" path="res://pranks_manager.tscn" id="8_wualt"]
+[ext_resource type="PackedScene" uid="uid://bv762dw8o722f" path="res://Scenes/Spike.tscn" id="6_7gvsh"]
+[ext_resource type="PackedScene" uid="uid://c2f4k8jwqmrx0" path="res://chunk_spawner.tscn" id="6_gl01n"]
+[ext_resource type="PackedScene" uid="uid://xc4snxivhoc0" path="res://Chunks/chunk_base.tscn" id="7_8gy6u"]
+[ext_resource type="Texture2D" uid="uid://bevbg1pgrmdae" path="res://tiles_placeholder.png" id="8_dmwng"]
+[ext_resource type="PackedScene" uid="uid://bxrjypnh88ehm" path="res://pranks_manager.tscn" id="8_wualt"]
 [ext_resource type="PackedScene" uid="uid://di6n32relq1ka" path="res://Pranks/control_change.tscn" id="9_o3xji"]
 [ext_resource type="PackedScene" uid="uid://cye6o3ll4gi5v" path="res://Pranks/faster.tscn" id="10_tdnid"]
 [ext_resource type="PackedScene" uid="uid://bdjgajffbv0ow" path="res://Pranks/field_of_view.tscn" id="11_gn3yd"]
@@ -16,6 +17,36 @@
 [ext_resource type="PackedScene" uid="uid://dr4c26uhm2nr" path="res://Pranks/scroll_faster.tscn" id="13_85ut7"]
 [ext_resource type="PackedScene" uid="uid://dcy0fbisutd4h" path="res://Pranks/zoom_in.tscn" id="14_g3lal"]
 [ext_resource type="PackedScene" uid="uid://d13aa6negpbx" path="res://Pranks/blur.tscn" id="15_r1kgp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vnmf1"]
+texture = ExtResource("8_dmwng")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -2, 8, -2, 8, -8)
+1:0/0/physics_layer_0/polygon_0/one_way = true
+
+[sub_resource type="TileSet" id="TileSet_0fs2r"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_vnmf1")
+
+[sub_resource type="PackedScene" id="PackedScene_bp3uf"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Chunk", "tile_set", "layer_0/tile_data"),
+"node_count": 1,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 2, 1, 1, 2, 2, 0),
+"variants": [ExtResource("7_8gy6u"), SubResource("TileSet_0fs2r"), PackedInt32Array(851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0, 262154, 65536, 0, 262161, 65536, 0, 524296, 0, 0, 589833, 0, 0, 589834, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 589840, 0, 0, 524305, 0, 0, 458769, 0, 0, 327693, 0, 0, 524301, 65536, 0, 524302, 65536, 0, 524300, 65536, 0, 458764, 0, 0, 393228, 0, 0)],
+"version": 3
+}
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_d0edc")
@@ -46,7 +77,7 @@ gizmo_extents = 123.4
 
 [node name="ChunkSpawner" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("6_gl01n")]
 spawn_place = NodePath("../Spanw_Position")
-chunks = Array[PackedScene]([ExtResource("7_63sms"), ExtResource("7_63sms"), ExtResource("7_63sms")])
+chunks = Array[PackedScene]([SubResource("PackedScene_bp3uf"), SubResource("PackedScene_bp3uf"), SubResource("PackedScene_bp3uf")])
 
 [node name="PranksManager" parent="." node_paths=PackedStringArray("pranks") instance=ExtResource("8_wualt")]
 pranks = [NodePath("ScrollFaster"), NodePath("ControlChange"), NodePath("Faster"), NodePath("Blur"), NodePath("ReversedScreen"), NodePath("ZoomIn"), NodePath("FieldOfView")]
@@ -74,3 +105,12 @@ visible = false
 
 [node name="Spike" parent="." instance=ExtResource("6_7gvsh")]
 position = Vector2(144, 196)
+collision_layer = 4
+collision_mask = 2
+
+[node name="Spike2" parent="." instance=ExtResource("6_7gvsh")]
+position = Vector2(227, 204)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
