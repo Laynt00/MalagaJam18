@@ -1,5 +1,5 @@
 extends Node2D
 
 func prank():
-	print("Blur")
+	print("PranksManager: Blur")
 	visible = true
