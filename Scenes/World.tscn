@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://nr0dv728734n"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_d0edc"]
-[ext_resource type="PackedScene" uid="uid://b1peqmvdsf8ee" path="res://Scenes/Player.tscn" id="1_vnt3u"]
-[ext_resource type="PackedScene" uid="uid://dhd3231hb43al" path="res://Scenes/Ground.tscn" id="2_13bmt"]
+[ext_resource type="PackedScene" uid="uid://np7f288s4pdy" path="res://Scenes/Player.tscn" id="1_vnt3u"]
+[ext_resource type="PackedScene" path="res://Scenes/Ground.tscn" id="2_13bmt"]
 [ext_resource type="PackedScene" uid="uid://dc3n1e8fuhnkv" path="res://UI/Paralax.tscn" id="3_qx8j1"]
 [ext_resource type="PackedScene" uid="uid://dyykk06sfykf" path="res://UI/hud.tscn" id="5_6jvrk"]
 [ext_resource type="PackedScene" path="res://chunk_spawner.tscn" id="6_gl01n"]
@@ -18,6 +18,8 @@
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_d0edc")
+
+[node name="HUD" parent="." instance=ExtResource("5_6jvrk")]
 
 [node name="Background1" parent="." instance=ExtResource("3_qx8j1")]
 
@@ -39,7 +41,7 @@ spawn_place = NodePath("../Spanw_Position")
 chunks = Array[PackedScene]([ExtResource("7_63sms"), ExtResource("7_63sms"), ExtResource("7_63sms")])
 
 [node name="PranksManager" parent="." node_paths=PackedStringArray("pranks") instance=ExtResource("8_wualt")]
-pranks = [NodePath("ScrollFaster"), NodePath("ControlChange"), NodePath("Faster"), NodePath("FieldOfView"), NodePath("ReversedScreen"), NodePath("ZoomIn"), NodePath("Blur")]
+pranks = [NodePath("ScrollFaster"), NodePath("ControlChange"), NodePath("Faster"), NodePath("Blur"), NodePath("ReversedScreen"), NodePath("ZoomIn"), NodePath("FieldOfView")]
 
 [node name="ScrollFaster" parent="PranksManager" instance=ExtResource("13_85ut7")]
 visible = false
