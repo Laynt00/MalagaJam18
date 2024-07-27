@@ -1,16 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://kwih2saf6n1g"]
+[gd_scene load_steps=3 format=3 uid="uid://kwih2saf6n1g"]
 
+[ext_resource type="Script" path="res://UI/heart.gd" id="1_botfi"]
 [ext_resource type="Texture2D" uid="uid://du5tmhbeuraca" path="res://rsc/Heart_red.png" id="1_q0sk5"]
 
 [node name="Panel" type="Panel"]
-self_modulate = Color(1, 1, 1, 0.858824)
-offset_right = 451.0
-offset_bottom = 451.0
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 47.0
+offset_bottom = 47.0
+script = ExtResource("1_botfi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(80, 79)
-scale = Vector2(0.144078, 0.144078)
+position = Vector2(23, 22)
+scale = Vector2(0.0384428, 0.0384428)
 texture = ExtResource("1_q0sk5")
 offset = Vector2(1, 2)
 hframes = 3
 vframes = 5
+frame = 2

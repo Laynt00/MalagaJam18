@@ -1,27 +1,31 @@
-[gd_scene load_steps=8 format=3 uid="uid://nr0dv728734n"]
+[gd_scene load_steps=9 format=3 uid="uid://nr0dv728734n"]
 
-[ext_resource type="Script" path="res://Scripts/World.gd" id="1_d0edc"]
+[ext_resource type="Script" path="res://Scenes/World.gd" id="1_d0edc"]
 [ext_resource type="PackedScene" uid="uid://b1peqmvdsf8ee" path="res://Scenes/Player.tscn" id="1_vnt3u"]
 [ext_resource type="PackedScene" uid="uid://dhd3231hb43al" path="res://Scenes/Ground.tscn" id="2_13bmt"]
 [ext_resource type="PackedScene" uid="uid://dc3n1e8fuhnkv" path="res://UI/Paralax.tscn" id="3_qx8j1"]
 [ext_resource type="PackedScene" uid="uid://dyykk06sfykf" path="res://UI/hud.tscn" id="5_6jvrk"]
 [ext_resource type="PackedScene" uid="uid://d0yipfx23n7jy" path="res://Scenes/Spike.tscn" id="6_7gvsh"]
+[ext_resource type="Script" path="res://UI/hud.gd" id="6_76jwm"]
 [ext_resource type="PackedScene" path="res://chunk_spawner.tscn" id="6_gl01n"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_d0edc")
 
-[node name="Background1" parent="." instance=ExtResource("3_qx8j1")]
+[node name="Background" parent="." instance=ExtResource("3_qx8j1")]
 
 [node name="Ground" parent="." instance=ExtResource("2_13bmt")]
-position = Vector2(304, 217)
+position = Vector2(288, 269)
 
 [node name="Player" parent="." instance=ExtResource("1_vnt3u")]
 z_index = 1
-position = Vector2(296, 134)
+position = Vector2(110, 198)
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
 position = Vector2(187, 181)
+
+[node name="HUD" parent="." instance=ExtResource("5_6jvrk")]
+script = ExtResource("6_76jwm")
 
 [node name="ChunkSpawner" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("6_gl01n")]
 spawn_place = NodePath("../Spanw_Position")
@@ -31,6 +35,4 @@ position = Vector2(384, 0)
 gizmo_extents = 123.4
 
 [node name="Spike" parent="." instance=ExtResource("6_7gvsh")]
-position = Vector2(160, 199)
-
-[node name="HUD" parent="." instance=ExtResource("5_6jvrk")]
+position = Vector2(163, 248)

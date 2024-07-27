@@ -15,6 +15,6 @@ func spawn_chunk():
 		chunks_spawn = chunks
 	chunks_spawn.shuffle()
 	var chunk : PackedScene = chunks_spawn.pop_front()
-	var instance = chunk.instantiate()
-	instance.global_position = spawn_place.global_position
-	get_parent().add_child(instance)
+#	var instance = chunk.instantiate()
+#	instance.global_position = spawn_place.global_position
+#	get_parent().add_child(instance)

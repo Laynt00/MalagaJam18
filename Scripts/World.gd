@@ -6,13 +6,12 @@ var spike = preload("res://Scenes/Spike.tscn")
 var obstacle_types := [spike]
 # Guarda los obstáculos que se van generando en pantalla
 var obstacles : Array
-
-
+@onready var hearts_container = $HeartsContainer
+@onready var hud = $HUD
 @onready var camera_2d = $Camera2D
 @onready var player = $Player
 @onready var ground = $Ground
 
-const PLAYER_START_POS := Vector2i(32, 236)
 const GROUND_POS := Vector2i(288,269)
 # Ajustar la camara al nuevo paralax que metamos
 const CAMERA_START_POS := Vector2i(295, 136)
@@ -33,6 +32,7 @@ var game_running : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	hud.setMaxHearts(1)
 	screen_size = get_window().size
 	ground_height = ground.get_node("Sprite2D").texture.get_height()
 	new_game()
@@ -42,7 +42,6 @@ func new_game():
 	score = 0
 	game_running = false
 	# Reset a los nodos
-	player.position = PLAYER_START_POS
 	player.velocity = Vector2i(0,0)
 	camera_2d.position = CAMERA_START_POS
 	ground.position = GROUND_POS

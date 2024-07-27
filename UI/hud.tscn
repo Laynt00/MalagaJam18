@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://dyykk06sfykf"]
+[gd_scene load_steps=3 format=3 uid="uid://dyykk06sfykf"]
+
+[ext_resource type="Script" path="res://UI/hud.gd" id="1_0nsq2"]
+[ext_resource type="PackedScene" uid="uid://crameonhcq5dm" path="res://UI/hearts_container.tscn" id="1_2vihp"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_0nsq2")
 
 [node name="ScoreLabel" type="Label" parent="."]
 offset_right = 56.0
@@ -35,3 +39,5 @@ grow_vertical = 2
 size_flags_horizontal = 0
 text = "PULSA SPACE PARA JUGAR"
 horizontal_alignment = 1
+
+[node name="HeartsContainer" parent="." instance=ExtResource("1_2vihp")]
