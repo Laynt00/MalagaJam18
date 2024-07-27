@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdjgajffbv0ow"]
+
+[ext_resource type="Script" path="res://FieldOfView.gd" id="1_ji8dc"]
+[ext_resource type="Shader" path="res://Shaders/circle.gdshader" id="2_0jwy1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_etamw"]
+shader = ExtResource("2_0jwy1")
+shader_parameter/circle_size = 0.5
+shader_parameter/screen_width = 384.0
+shader_parameter/screen_height = 224.0
+
+[node name="FieldOfView" type="Node2D"]
+script = ExtResource("1_ji8dc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_etamw")
+offset_right = 384.0
+offset_bottom = 224.0
+color = Color(0, 0, 0, 1)

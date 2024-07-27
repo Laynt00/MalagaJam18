@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://d13aa6negpbx"]
+
+[ext_resource type="Shader" path="res://Pranks/Blurry.gdshader" id="1_uylfw"]
+[ext_resource type="Texture2D" uid="uid://d4lg5d7d2grxm" path="res://icon.svg" id="2_5rnl0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wlxmw"]
+shader = ExtResource("1_uylfw")
+shader_parameter/lod = 0.799
+
+[node name="Blur" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(199, 70)
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("2_5rnl0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_wlxmw")
+offset_top = 1.52588e-05
+offset_right = 384.0
+offset_bottom = 224.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(80, 136)
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("2_5rnl0")

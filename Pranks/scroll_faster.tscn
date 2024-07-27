@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr4c26uhm2nr"]
+
+[ext_resource type="Script" path="res://Pranks/ScrollFaster.gd" id="1_ysmn8"]
+
+[node name="ScrollFaster" type="Node2D"]
+script = ExtResource("1_ysmn8")

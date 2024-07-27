@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1peqmvdsf8ee"]
+[gd_scene load_steps=7 format=3 uid="uid://np7f288s4pdy"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_2w4r1"]
 [ext_resource type="Texture2D" uid="uid://bvpih2wuyv5ns" path="res://rsc/pelota_ejemplo.png" id="1_fax7v"]
@@ -18,7 +18,7 @@ _data = {
 "jump": SubResource("Animation_r3vfr")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_2w4r1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
