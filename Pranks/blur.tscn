@@ -5,7 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wlxmw"]
 shader = ExtResource("1_uylfw")
-shader_parameter/lod = 0.799
+shader_parameter/lod = 0.396
 
 [node name="Blur" type="Node2D"]
 script = ExtResource("1_bci0q")
