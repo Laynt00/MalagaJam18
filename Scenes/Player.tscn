@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bvpih2wuyv5ns" path="res://rsc/pelota_ejemplo.png" id="1_fax7v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ljtu1"]
-radius = 45.6508
-
-[sub_resource type="Animation" id="Animation_r3vfr"]
-resource_name = "jump"
+radius = 17.0294
 
 [sub_resource type="Animation" id="Animation_s15lw"]
 resource_name = "death"
+
+[sub_resource type="Animation" id="Animation_r3vfr"]
+resource_name = "jump"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0ggu0"]
 _data = {
@@ -22,8 +22,8 @@ _data = {
 script = ExtResource("1_2w4r1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, -2.38419e-07)
-scale = Vector2(0.31, 0.31)
+position = Vector2(3.8147e-06, 0)
+scale = Vector2(0.1125, 0.1125)
 texture = ExtResource("1_fax7v")
 
 [node name="CharacterBody2D" type="CollisionShape2D" parent="."]

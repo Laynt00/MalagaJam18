@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhd3231hb43al"]
+
+[ext_resource type="Texture2D" uid="uid://ddfgrkvmq4nec" path="res://rsc/Stones_Texture.png" id="1_gdrvf"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e07mb"]
+
+[node name="Ground" type="StaticBody2D"]
+position = Vector2(-1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(482, 41)
+scale = Vector2(2.51367, 0.0830078)
+texture = ExtResource("1_gdrvf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("WorldBoundaryShape2D_e07mb")
+debug_color = Color(0.642452, 0.516495, 0.245804, 0.42)
