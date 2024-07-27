@@ -1,10 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dyykk06sfykf"]
 
 [ext_resource type="Script" path="res://UI/hud.gd" id="1_0nsq2"]
-[ext_resource type="PackedScene" uid="uid://crameonhcq5dm" path="res://UI/hearts_container.tscn" id="1_2vihp"]
 
-[node name="HUD" type="CanvasLayer"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xoa6x"]
+size = Vector2(16, 16)
+
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("hearts") groups=["HUD"]]
 script = ExtResource("1_0nsq2")
+hearts = [NodePath("HBoxContainer/Heart"), NodePath("HBoxContainer/Heart2"), NodePath("HBoxContainer/Heart3")]
 
 [node name="ScoreLabel" type="Label" parent="."]
 offset_right = 56.0
@@ -24,20 +27,21 @@ size_flags_horizontal = 0
 text = "HIGH SCORE:"
 horizontal_alignment = 1
 
-[node name="Start" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.5
-offset_top = -11.5
-offset_right = 100.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 0
-text = "PULSA SPACE PARA JUGAR"
-horizontal_alignment = 1
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 18.0
+offset_top = 197.0
+offset_right = 388.0
+offset_bottom = 213.0
+size_flags_vertical = 4
 
-[node name="HeartsContainer" parent="." instance=ExtResource("1_2vihp")]
+[node name="Heart" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_xoa6x")
+
+[node name="Heart2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_xoa6x")
+
+[node name="Heart3" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_xoa6x")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk5qgyi4ruh6j"]
+
+[ext_resource type="PackedScene" uid="uid://xc4snxivhoc0" path="res://Chunks/chunk_base.tscn" id="1_sptga"]
+
+[node name="Chunk" instance=ExtResource("1_sptga")]
+layer_0/tile_data = PackedInt32Array(851968, 1, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851972, 1, 0, 851973, 1, 0, 851974, 1, 0, 851975, 1, 0, 851976, 1, 0, 851977, 1, 0, 851978, 1, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0)
